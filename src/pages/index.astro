@@ -1,9 +1,9 @@
 ---
-import "../style/global.css"
-import {Button} from "@/components/ui/button"
+import "../style/global.css";
+import { LoginForm } from "@/components/login-form";
 ---
 
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,7 +13,7 @@ import {Button} from "@/components/ui/button"
 	</head>
 	<body>
 		<div class="grid place-items-center h-screen content-center">
-			<Button>Button</Button>
+			<LoginForm client:load/>
 		</div>
 	</body>
 </html>
