@@ -5,8 +5,9 @@
     "clientKind": "git",
     "useIgnoreFile": false
   },
+
   "files": {
-    "ignoreUnknown": true
+    "includes": ["src/**/*.jsx"]
   },
   "formatter": {
     "enabled": true,
@@ -22,6 +23,12 @@
   "javascript": {
     "formatter": {
       "quoteStyle": "double"
+    }
+  },
+  "html": {
+    "formatter": {
+      "indentStyle": "tab",
+      "enabled": true
     }
   },
   "assist": {

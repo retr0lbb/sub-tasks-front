@@ -1,19 +1,37 @@
 ---
 import "../style/global.css";
-import { LoginForm } from "@/components/login-form";
+import { Button } from "@/components/ui/button";
+import bg from "../assets/bg.jpeg"; // imagem importada corretamente
+import { getImage } from "astro:assets";
+
+const optimizedBackGround = await getImage({ src: bg, format: "webp" });
 ---
 
 <html lang="en" class="dark">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<LoginForm client:load/>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>SubTask</title>
+  </head>
+  <body>
+    <div
+      class="grid place-items-center h-screen content-center bg-cover bg-center"
+      style={`background-image: url(${optimizedBackGround.src});`}
+    >
+      <div class="flex items-center w-1/2 aspect-video justify-center flex-col gap-5 p-10 rounded-4xl bg-zinc-950/20 backdrop-blur-xs border border-zinc-200/10">
+        <div class="flex flex-col gap-4">
+          <h1 class="text-6xl text-center font-bold text-zinc-100">Orbit</h1>
+          <p class="text-lg text-center text-zinc-200">
+            O gerenciador de tarefas do futuro
+          </p>
+        </div>
+        <div class="flex items-center justify-center gap-4">
+          <a href="/login"><Button variant="outline" size="lg">Entrar</Button></a>
+          <a href="/register/"><Button variant="default" size="lg">Cadastre-se</Button></a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
