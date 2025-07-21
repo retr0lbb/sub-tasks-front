@@ -1,0 +1,17 @@
+---
+import MainLayout from "@/layout/layout.astro"
+import { RegisterForm } from "@/components/register-form";
+---
+
+<MainLayout>
+    <div class="h-dvh w-full grid grid-cols-2 place-items-start bg-blue-600">
+        <div 
+          class="w-full h-full flex items-center justify-center p-2 bg-black rounded-tr-2xl 
+          rounded-br-2xl drop-shadow-2xl"
+        >
+            <RegisterForm client:load />
+        </div>
+        <div class="w-full h-full flex flex-col items-center bg-blue-600">
+        </div>
+    </div>
+</MainLayout>

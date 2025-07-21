@@ -45,14 +45,14 @@ export function LoginForm() {
   }
 
   return (
-    <Card className="w-2/3 py-8">
+    <Card className="w-[600px] py-8">
       <CardHeader>
         <CardTitle>Acesse sua conta agora mesmo</CardTitle>
         <CardDescription>
           Coloque o seu email e senha abaixo e acesse sua conta imediatamente
         </CardDescription>
         <CardAction>
-          <Button variant="link">Cadastre-se</Button>
+          <a href="/register"><Button variant="link">Cadastre-se</Button></a>
         </CardAction>
       </CardHeader>
       <CardContent>
@@ -97,7 +97,7 @@ export function LoginForm() {
               }}
             />
 
-            <Button type="submit">Entrar</Button>
+            <Button className="mt-2" type="submit">Entrar</Button>
           </form>
         </Form>
       </CardContent>

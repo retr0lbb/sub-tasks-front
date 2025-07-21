@@ -1,23 +1,16 @@
 ---
 import "../style/global.css";
 import { Button } from "@/components/ui/button";
-import bg from "../assets/bg.jpeg"; // imagem importada corretamente
+import bg from "../assets/bg.jpeg";
 import { getImage } from "astro:assets";
+import MainLayout from "@/layout/layout.astro"
 
 const optimizedBackGround = await getImage({ src: bg, format: "webp" });
 ---
 
-<html lang="en" class="dark">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>SubTask</title>
-  </head>
-  <body>
-    <div
-      class="grid place-items-center h-screen content-center bg-cover bg-center"
+<MainLayout>
+  <div
+      class="grid place-items-center h-dvh content-center bg-cover bg-center"
       style={`background-image: url(${optimizedBackGround.src});`}
     >
       <div class="flex items-center w-1/2 aspect-video justify-center flex-col gap-5 p-10 rounded-4xl bg-zinc-950/20 backdrop-blur-xs border border-zinc-200/10">
@@ -33,5 +26,4 @@ const optimizedBackGround = await getImage({ src: bg, format: "webp" });
         </div>
       </div>
     </div>
-  </body>
-</html>
+</MainLayout>

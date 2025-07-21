@@ -1,19 +1,12 @@
 ---
-import "../style/global.css";
 import { LoginForm } from "@/components/login-form";
+import MainLayout from "@/layout/layout.astro"
 ---
 
-<html lang="en" class="dark">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>SubTask</title>
-	</head>
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<LoginForm client:load/>
-		</div>
-	</body>
-</html>
+<MainLayout>
+	<div class="grid place-items-center h-dvh content-center">
+		<LoginForm client:load/>
+	</div>
+</MainLayout>
+
+
