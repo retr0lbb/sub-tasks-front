@@ -1,9 +1,34 @@
 ---
 import Dashboard from "@/layout/dashboard.astro";
+import { Project } from "@/components/project";
+import {randomUUID} from "crypto"
 ---
 
 <Dashboard>
-    <div class="w-full min-h-dvh bg-zinc-950">
+    <div class="w-full h-dvh flex flex-col overflow-hidden bg-zinc-950">
+        <div class="w-full min-h-10 flex">
 
+        </div> 
+
+        <div class="flex-1 grid items-start grid-cols-4 p-2 gap-4 border m-5">
+            <Project 
+                description="Meu guia de preparação para a brasil fur fest 2026 Lets go Yiff" 
+                projectId={randomUUID()} 
+                createdAt="2024-07-15T10:30:00Z" 
+                title="Brasil Fur Fest 2026"
+            />
+            <Project 
+                description="Meu guia de preparação para a brasil fur fest 2026 Lets go Yiff" 
+                projectId={randomUUID()} 
+                createdAt="2024-07-15T10:30:00Z" 
+                title="Brasil Fur Fest 2026"
+            />
+            <Project 
+                description="Meu guia de preparação para a brasil fur fest 2026 Lets go Yiff" 
+                projectId={randomUUID()} 
+                createdAt="2024-07-15T10:30:00Z" 
+                title="Brasil Fur Fest 2026"
+            />
+        </div>
     </div>
 </Dashboard>

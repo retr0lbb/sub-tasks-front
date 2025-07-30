@@ -1,0 +1,25 @@
+---
+import Dashboard from "@/layout/dashboard.astro";
+import { API_URL } from "astro:env/server"
+import axios from "axios"
+
+export async function getStaticPaths(){
+    try {
+        const data = await axios.get(`${API_URL}/projects`, {
+            headers: {
+                Authorization: "Bearer valid-token"
+            }
+        })
+
+        console.log(data)
+    } catch (error) {
+        console.log(error)
+        return []
+    }
+}
+---
+
+
+<Dashboard>
+    <h1>Hello mama with id</h1>
+</Dashboard>
